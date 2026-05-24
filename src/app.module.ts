@@ -19,7 +19,8 @@ import { PatientRegistrationModule } from './application/patient-registration/pa
 import { KeycloakAuthGuard } from './modules/auth/guards/keycloak-auth.guard';
 import { RolesGuard } from './modules/auth/guards/roles.guard';
 import { AppointmentHistory } from './modules/appointments/entities/appointment-history.entity';
-
+console.log('DB_HOST:', process.env.DB_HOST);
+console.log('DB_PORT:', process.env.DB_PORT);
 @Module({
   imports: [
     ConfigModule.forRoot({
