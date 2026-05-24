@@ -38,6 +38,7 @@ import { AppointmentHistory } from './modules/appointments/entities/appointment-
         database: config.get<string>('DB_NAME'),
         entities: [Professional, Patient, Appointment, Availability, User, AppointmentHistory],
         synchronize: true,
+        ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
       }),
     }),
     ProfessionalsModule,
